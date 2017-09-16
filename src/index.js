@@ -39,26 +39,7 @@ module.exports = function multiply(first, second) {
         product.push(partProduct);
 
     }
-
-
-    // for( let i = product.length-1; i > 0; i--){
-    //
-    //     for(let j = product[0].length-1; j >= 0; j--){
-    //
-    //         //console.log(a[i] + " "+ b[i] + " " + dec);
-    //
-    //         if(j !== 0){
-    //
-    //             result.unshift((product[i][j] + product[i - 1][j] + dec) %10);
-    //             dec = Math.floor((product[i][j] + product[i - 1][j] + dec)/10);
-    //
-    //         } else{
-    //             result.unshift(product[i][j] + product[i - 1][j] + dec);
-    //         }
-    //     }
-    //
-    //     dec = 0;
-    // }
+    
 
     let result = new Array(first.length + second.length + 1).fill(0);
     for(let i = product[0].length - 1; i >= 0; i--) {
