@@ -23,14 +23,14 @@ module.exports = function multiply(first, second) {
 
         let partProduct = new Array(first.length + second.length + 1).fill(0);
 
-
-        for(let j = second.length-1, m = n; j >= 0; j--, m--) {
-                if(j !== 0){
-                    partProduct[m] = (first[i] * second[j] + dec) %10;
-                    dec = Math.floor((first[i] * second[j] + dec)/10);
-                } else{
-                    partProduct[m] = first[i] * second[j] + dec;
-                }
+        for(let j = second.length-1, m = n; j >= 0; j--, m--){
+            if(j !== 0){
+                partProduct[m] = (first[i] * second[j] + dec) %10;
+                dec = Math.floor((first[i] * second[j] + dec)/10);
+            }
+            else{
+                partProduct[m] = first[i] * second[j] + dec;
+            }
             
         }
 
@@ -39,14 +39,15 @@ module.exports = function multiply(first, second) {
         product.push(partProduct);
 
     }
-    
 
     let result = new Array(first.length + second.length + 1).fill(0);
+
     for(let i = product[0].length - 1; i >= 0; i--) {
         for(let j = 0; j < product.length; j++) {
             result[i] += product[j][i];
         }
     }
+
 
     for(let i = result.length - 1; i >= 0; i--) {
         if (result[i] > 9) {
@@ -57,3 +58,4 @@ module.exports = function multiply(first, second) {
     return result.join("").replace(/^0*/, "");
 
 };
+
